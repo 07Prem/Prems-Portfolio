@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import {
   AnimatePresence,
   motion,
-  animate,
   useAnimationControls,
 } from "framer-motion";
 
@@ -13,11 +12,7 @@ const getRandomHeight = () => {
 };
 
 const NyanCat = () => {
-  const [divs, setDivs] = useState<
-    {
-      id: string;
-    }[]
-  >([]);
+  const [divs, setDivs] = useState<{ id: string }[]>([]);
 
   const spawnDiv = () => {
     const newDiv = {
@@ -25,6 +20,8 @@ const NyanCat = () => {
     };
     setDivs((prevDivs) => [...prevDivs, newDiv]);
   };
+
+  // Add keydown event listener only once on mount
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "n") spawnDiv();
@@ -34,7 +31,7 @@ const NyanCat = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  });
+  }, []); // empty dependency array
 
   return (
     <div className="fixed left-0 top-0 w-screen h-screen overflow-hidden z-[-1]">
@@ -43,17 +40,16 @@ const NyanCat = () => {
           <div className="fixed w-screen flex left-0 top-16">{divs.length}</div>
         )}
       </AnimatePresence>
-      {divs &&
-        divs.map((div) => (
-          <AnimatedDiv
-            key={div.id}
-            id={div.id}
-            onClick={() => console.log("clicked")}
-            onCompleted={() => {
-              setDivs(divs.filter((d) => d.id !== div.id));
-            }}
-          />
-        ))}
+      {divs.map((div) => (
+        <AnimatedDiv
+          key={div.id}
+          id={div.id}
+          onClick={() => console.log("clicked")}
+          onCompleted={() => {
+            setDivs((prev) => prev.filter((d) => d.id !== div.id));
+          }}
+        />
+      ))}
     </div>
   );
 };
@@ -67,17 +63,17 @@ const AnimatedDiv = ({
   onClick: () => void;
   onCompleted: () => void;
 }) => {
-  const randY = getRandomHeight();
-
+  // Compute the random Y position once and keep it stable
+  const [randY] = useState(getRandomHeight);
   const controls = useAnimationControls();
 
-  React.useEffect(() => {
+  useEffect(() => {
     controls.start({
       x: "100vw",
       y: randY,
       transition: { duration: 5, ease: "linear" },
     });
-  }, [controls]);
+  }, [controls, randY]); // include randY so the effect runs with its stable value
 
   const handlePause = () => {
     onClick();
