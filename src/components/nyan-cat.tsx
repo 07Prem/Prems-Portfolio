@@ -97,3 +97,4 @@ const AnimatedDiv = ({
 };
 
 export default NyanCat;
+
