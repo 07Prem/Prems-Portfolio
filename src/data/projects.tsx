@@ -34,6 +34,7 @@ import {
   SiApachemaven,
   SiCplusplus,
   SiArduino,
+  SiCsharp,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import css from "styled-jsx/css";
@@ -292,11 +293,29 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiArduino/>,
   },
-  less : {
-    title: "less",
+  sqlserver : {
+    title: "sqlserver",
     bg: "black",
     fg: "white",
-    icon: <img src="assets/icons/less.svg" alt="Java"/>,
+    icon: <img src="assets/icons/sql-server-white.svg" alt="Java"/>,
+  },
+  Csharp : {
+    title: "Csharp",
+    bg: "black",
+    fg: "white",
+    icon: <img src="assets/icons/csharp.svg" alt="Java"/>,
+  },
+  shell : {
+    title: "shell",
+    bg: "black",
+    fg: "white",
+    icon: <img src="assets/icons/shell.svg" alt="Java"/>,
+  },
+  kotlin : {
+    title: "Kotlin",
+    bg: "black",
+    fg: "white",
+    icon: <img src="assets/icons/kotlin.svg" alt="Java"/>,
   },
 };
 export type Project = {
@@ -313,25 +332,26 @@ export type Project = {
 const projects: Project[] = [
   // +
   { // 01. AI Docker file optimizer project
-    id: "aidockerfileoptimizer",
-    category: "AI and DevOps",
-    title: "AI Dockerfile Optimizer",
+    id: "Hospital-management-system",
+    category: "HealthTech",
+    title: "Hospital Management System",
     src: "/assets/projects-screenshots/Hospital-management-system/1.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png"],
     live: "/live",
     github:"",
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.html, PROJECT_SKILLS.less, PROJECT_SKILLS.vite],
-      backend: [PROJECT_SKILLS.openai,PROJECT_SKILLS.netlify],
+      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.html, PROJECT_SKILLS.css],
+      backend: [PROJECT_SKILLS.sqlserver,PROJECT_SKILLS.Csharp],
     },
     get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
-            AI-Docker-file-optimizer helps optimize Dockerfiles for smaller, more efficient images. 
-            Simply paste your Dockerfile, and the app analyzes it for best practices and size 
-            optimization tips. It then provides a refactored, optimized version of the Dockerfile. 
-            Deployed on Vercel, it ensures fast and easy access to Dockerfile optimization.
+            HMS Manager is a comprehensive hospital management system built with ASP.NET, designed 
+            to streamline patient records, appointment scheduling, and hospital resource management.
+            It provides an intuitive interface for managing doctors, patients, and medical records 
+            efficiently. With a secure database integration, the system ensures reliable and seamless 
+            hospital operations.
           </TypographyP>
           <SlideShow
             images={[
@@ -345,96 +365,37 @@ const projects: Project[] = [
       );
     },
   },
-  { // 02. FinanceMe project
-    id: "financeme",
-    category: "DevOps in Banking and Finance",
-    title: "FinanceMe: Complete DevOps Capstone Project",
-    src: "/assets/projects-screenshots/financeme/1.png",
-    screenshots: ["/assets/projects-screenshots/financeme/1.png"],
+  { // 02. Bike Rental System
+    id: "Bike-Rental-System",
+    category: "Web Development",
+    title: "Bike Rental System",
+    src: "/assets/projects-screenshots/Bike-Rental-System/1.png",
+    screenshots: ["/assets/projects-screenshots/Bike-Rental-System/1.png"],
     skills: {
-      frontend: [
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.bootstrap,
-      ],
-      backend: [
-        PROJECT_SKILLS.java,
-        PROJECT_SKILLS.maven,
-        PROJECT_SKILLS.postgres,
-      ],
+      frontend: [PROJECT_SKILLS.html, PROJECT_SKILLS.css, PROJECT_SKILLS.js],
+      backend: [PROJECT_SKILLS.shell],
     },
-    live: "https://github.com/Abhiz2411/FinanceMe-Devops-Project-01",
-    github: "https://github.com/Abhiz2411/FinanceMe-Devops-Project-01",
+    live: "/live",
+    github:"",
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            FinanceMe: Complete DevOps Capstone Project
-          </TypographyP>
           <TypographyP className="font-mono ">
-            This project demonstrates the deployment of a DevOps pipeline for a global banking and
-            financial services provider, FinanceMe. The company transitioned from a monolithic 
-            architecture to a microservice-based architecture to handle increased traffic and 
-            scaling challenges. The project involves automating infrastructure provisioning, build 
-            and deployment processes, and continuous monitoring using modern DevOps tools and 
-            AWS services.?
+          Bike Rental Manager is a comprehensive bike rental system built with ASP.NET, designed 
+          to streamline bike reservations, user management, and rental tracking. It provides an 
+          intuitive interface for managing customers, rental transactions, and bike availability 
+          efficiently. With secure database integration, the system ensures reliable and seamless 
+          rental operations.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Architecture </TypographyH3>
-          <p className="font-mono mb-2">
-            The project is divided into three main phases:
-            1.Automating Infrastructure Provisioning
-            2.Build and Deployment Automation
-            3.Continuous Monitoring
-          </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/financeme/1.png`,
-              `${BASE_PATH}/financeme/2.png`,
+              `${BASE_PATH}/Bike-Rental-System/1.png`,
+              `${BASE_PATH}/Bike-Rental-System/2.png`,
+              `${BASE_PATH}/Bike-Rental-System/3.png`,
+              `${BASE_PATH}/Bike-Rental-System/4.png`,
+              `${BASE_PATH}/Bike-Rental-System/5.png`,
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Automating Infrastructure Provisioning</TypographyH3>
-          <p className="font-mono mb-2">
-          Terraform is used to create 4 AWS EC2 instances:
-            Jenkins Master Node (for CI/CD pipeline management)
-            Build Server (for application and Docker image builds)
-            Production Server (for deploying Dockerized applications)
-            Monitoring Server (for continuous monitoring of Build and Prod servers)
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/financeme/4_A.png`,
-              `${BASE_PATH}/financeme/4.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Build and Deployment Automation</TypographyH3>
-
-          <p className="font-mono mb-2">
-          Jenkins is configured for a CI/CD pipeline:
-            Jenkins Master Node is responsible for pipeline orchestration.
-            Build Server is configured as a Jenkins Slave Node to handle application builds and Docker image creation.
-            Ansible is used for automating deployment to the Prod server, where the application is deployed using an Ansible client-server model.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/financeme/5.png`,
-              `${BASE_PATH}/financeme/6.png`,
-              `${BASE_PATH}/financeme/7.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Continuous Monitoring </TypographyH3>
-          <p className="font-mono mb-2">
-          Prometheus and Grafana are used for real-time monitoring:
-            Node Exporter is installed on both Build and Prod servers to collect server metrics (CPU, Disk Space, Memory Utilization).
-            Grafana Dashboard is created to visualize these metrics for continuous monitoring.
-          </p>
-          <SlideShow images={[
-                `${BASE_PATH}/financeme/3.png`,
-                `${BASE_PATH}/financeme/8.png`,
-                `${BASE_PATH}/financeme/9.png`,
-                `${BASE_PATH}/financeme/10.png`,
-            ]} />
         </div>
       );
     },
@@ -442,20 +403,20 @@ const projects: Project[] = [
   { // 03. Portfolio project
     id: "portfolio",
     category: "Portfolio",
-    title: "My Portfolio",
-    src: "/assets/projects-screenshots/myportfolio/landing.png",
-    screenshots: ["assets/projects-screenshots/myportfolio/landing.png"],
-    live: "https://www.abhijitzende.com/",
-    github:"https://github.com/Abhiz2411/3D-interactive-portfolio",
+    title: "Portfolio",
+    src: "/assets/projects-screenshots/portfolio/1.png",
+    screenshots: ["assets/projects-screenshots/portfolio/1.png"],
+    live: "/live",
+    github:"",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
         PROJECT_SKILLS.next,
-        PROJECT_SKILLS.shadcn,
-        PROJECT_SKILLS.aceternity,
+        PROJECT_SKILLS.html,
         PROJECT_SKILLS.framerMotion,
-        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.css,
         PROJECT_SKILLS.spline,
+        PROJECT_SKILLS.js,
       ],
       backend: [],
     },
@@ -463,150 +424,123 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono ">
-            Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.
+          A simple 3D portfolio website where a 3D character follows the users mouse movements 
+          by turning its head. Built with Three.js for rendering and GSAP for smooth animations, 
+          ensuring an interactive and engaging experience.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">
-            Beautiful 3D Objects{" "}
-          </TypographyH3>
-          <p className="font-mono mb-2">
-            Did you see that 3D keyboard modal? Yeah! I made that. That
-            interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
-            typing, but make it art.
-          </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/myportfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
-          <p className="font-mono mb-2">
-            Dark background + floating particles = out-of-this-world cool.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/myportfolio/navbar.png`]} />
-          <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
-
-          <p className="font-mono mb-2">
-            My top personal and freelance projects — no filler, all killer.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/myportfolio/projects.png`,
-              `${BASE_PATH}/myportfolio/project.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
-          </p>
-        </div>
-      );
-    },
-  },
-  { // 04. Smart parking assitant
-    id: "smartparkingassitant",
-    category: "IoT",
-    title: "Smart Parking Assistant",
-    src: "/assets/projects-screenshots/smartparkingassitant/01.jpeg",
-    screenshots: ["01.jpeg", "03.png"],
-    live: "https://github.com/Abhiz2411/smart-parking-assistant",
-    github:"https://github.com/Abhiz2411/smart-parking-assistant",
-    skills: {
-      frontend: [PROJECT_SKILLS.python],
-      backend: [PROJECT_SKILLS.cplusplus, PROJECT_SKILLS.arduino],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Transform parking with the Smart Parking Assistant, an IoT marvel powered by Arduino 
-            and IR sensors to detect and recommend the best spots in real-time. Enjoy a sleek GUI 
-            that visualizes availability and an intelligent system for quick, optimal decisions. 
-            Built to adapt with customizable hardware and Python-powered software for seamless 
-            integration. Say goodbye to parking woes and hello to smarter space utilization!
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/smartparkingassitant/01.jpeg`,
-              `${BASE_PATH}/smartparkingassitant/03.png`,
-              `${BASE_PATH}/smartparkingassitant/04.jpg`,
+              `${BASE_PATH}/portfolio/1.png`,
+              `${BASE_PATH}/portfolio/2.png`,
+              `${BASE_PATH}/portfolio/3.png`,
+              `${BASE_PATH}/portfolio/4.png`,
+              `${BASE_PATH}/portfolio/5.png`,
+              `${BASE_PATH}/portfolio/6.png`,
             ]}
           />
         </div>
       );
     },
   },
-  { // 05. Smart Job Tracker project
-    id: "smartjobtracker",
-    category: "Full stack",
-    title: "Smart Job Tracker",
-    src: "/assets/projects-screenshots/smartjobtracker/02.png",
-    screenshots: ["01.png", "02.png", "03.png","04.png","05.png","06.png","07.png"],
-    live: "https://job-tracker-application-eight.vercel.app/",
-    github:"https://github.com/Abhiz2411/Job-tracker-application",
+  { // 04. Food App
+    id: "Food-App",
+    category: "App Development",
+    title: "Food App",
+    src: "/assets/projects-screenshots/Food-App/1.png",
+    screenshots: ["1.png"],
+    live: "/live",
+    github:"",
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.vite],
+      frontend: [PROJECT_SKILLS.kotlin, PROJECT_SKILLS.java],
       backend: [PROJECT_SKILLS.firebase],
     },
     get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
-            Track your job applications effortlessly with a sleek, dark-themed app that lets you 
-            manage, filter, and visualize your job search. Organize your applications with a 
-            Kanban board, monitor progress through status updates, and store everything securely. 
-            Enjoy seamless access across devices with a responsive design and email reminders for 
-            interviews. A smarter, more intuitive way to stay on top of your job hunt!
+          Food App is a dynamic food delivery application built with Kotlin, designed to 
+          simplify ordering, tracking, and restaurant management. It provides an intuitive 
+          interface for customers to browse menus, place orders, and make secure payments. 
+          With real-time order tracking and seamless integration with delivery partners, 
+          the system ensures efficient and hassle-free food delivery.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow
             images={[
-              `${BASE_PATH}/smartjobtracker/01.png`,
-              `${BASE_PATH}/smartjobtracker/02.png`,
-              `${BASE_PATH}/smartjobtracker/03.png`,
-              `${BASE_PATH}/smartjobtracker/04.png`,
-              `${BASE_PATH}/smartjobtracker/05.png`,
-              `${BASE_PATH}/smartjobtracker/06.png`,
-              `${BASE_PATH}/smartjobtracker/07.png`,
+              `${BASE_PATH}/Food-App/1.png`,
+              `${BASE_PATH}/Food-App/2.png`,
+              `${BASE_PATH}/Food-App/3.png`,
+              `${BASE_PATH}/Food-App/4.png`,
+              `${BASE_PATH}/Food-App/5.png`,
+              `${BASE_PATH}/Food-App/6.png`,
+              `${BASE_PATH}/Food-App/7.png`,
+              `${BASE_PATH}/Food-App/8.png`,
             ]}
           />
         </div>
       );
     },
   },
-  { // 06. Savinder Puri portfolio project
-    id: "savinderpurisportfolio",
-    category: "Web Development",
-    title: "Savinder Puri Portfolio",
-    src: "/assets/projects-screenshots/savinderpuriportfolio/01.png",
-    screenshots: ["01.png", "02.png", "03.png","04.png","05.png"],
-    live: "https://savinder-puri.vercel.app/",
-    github:"https://github.com/Abhiz2411/savinder-puri",
+  { // 05. Robotic Arm
+    id: "robotic-arm",
+    category: "IOT",
+    title: "Robotic Arm",
+    src: "/assets/projects-screenshots/robotic-arm/1.jpg",
+    screenshots: ["1.png", "2.png", "3.png"],
+    live: "/live",
+    github:"",
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.vite],
-      backend: [],
+      frontend: [PROJECT_SKILLS.python],
+      backend: [PROJECT_SKILLS.arduino],
     },
     get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
-            Step into the digital world of Savinder Puri, the beloved DevOps guru and Spiritual 
-            Alchemist, with this responsive portfolio website. 🌐✨ Explore his inspiring journey, 
-            milestones, and life-changing services blending tech and spirituality. Built with 
-            modern tools like React and TypeScript, it’s a heartfelt tribute to a mentor who 
-            transforms lives. 💻🕊️ Crafted with ❤️ by Abhijit Zende! 🚀
+          Robotic Arm Controller is an advanced system built with Arduino Uno, designed for 
+          precise and efficient robotic arm control. It enables smooth movement and automation
+          using servo motors, allowing users to perform tasks like object manipulation and
+          assembly. With an intuitive interface and customizable controls, the system
+          ensures seamless operation and flexibility for various applications.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow
             images={[
-              `${BASE_PATH}/savinderpuriportfolio/01.png`,
-              `${BASE_PATH}/savinderpuriportfolio/02.png`,
-              `${BASE_PATH}/savinderpuriportfolio/03.png`,
-              `${BASE_PATH}/savinderpuriportfolio/04.png`,
-              `${BASE_PATH}/savinderpuriportfolio/05.png`,
+              `${BASE_PATH}/robotic-arm/1.jpg`,
+              `${BASE_PATH}/robotic-arm/2.png`,
+              `${BASE_PATH}/robotic-arm/3.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  { // 06. Ultrasonic radar
+    id: "Ultrasonic radar",
+    category: "IOT",
+    title: "Ultrasonic radar",
+    src: "/assets/projects-screenshots/Ultrasonic-radar/1.png",
+    screenshots: ["1.png", "2.png", "3.png"],
+    live: "/live",
+    github:"",
+    skills: {
+      frontend: [PROJECT_SKILLS.cplusplus],
+      backend: [PROJECT_SKILLS.arduino],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+          Ultrasonic Radar System is a real-time object detection and distance measurement 
+          system built using an Arduino Uno and an ultrasonic sensor. It scans the 
+          surroundings by rotating a servo motor and detects obstacles within a defined 
+          range. The system displays a radar-like interface on a connected screen, providing 
+          real-time distance and position data. With efficient coding and hardware integration, 
+          it ensures accurate and reliable object detection.
+          </TypographyP>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/Ultrasonic-radar/1.png`,
+              `${BASE_PATH}/Ultrasonic-radar/2.png`,
+              `${BASE_PATH}/Ultrasonic-radar/3.png`,
             ]}
           />
         </div>

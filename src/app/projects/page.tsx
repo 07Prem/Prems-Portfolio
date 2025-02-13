@@ -16,11 +16,12 @@ const PROJECTS = [
             Simply paste your Dockerfile, and the app analyzes it for best practices and size 
             optimization tips. It then provides a refactored, optimized version of the Dockerfile. 
             Deployed on Vercel, it ensures fast and easy access to Dockerfile optimization..`,
-    link: "https://ai-docker-file-optimizer.netlify.app/",
+    link: "/link",
     images: [
-      "/assets/projects-screenshots/aidockerfileoptimizer/1.png",
-      "/assets/projects-screenshots/aidockerfileoptimizer/2.png",
-      "/assets/projects-screenshots/aidockerfileoptimizer/3.png",
+      "/assets/projects-screenshots/Hospital-management-system/1.png",
+      "/assets/projects-screenshots/Hospital-management-system/2.png",
+      "/assets/projects-screenshots/Hospital-management-system/3.png",
+      "/assets/projects-screenshots/Hospital-management-system/4.png",
     ],
   },
   {
