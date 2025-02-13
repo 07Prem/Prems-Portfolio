@@ -57,13 +57,13 @@ const CONTACT_LINKS = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/prem-joshi-4aa590276/",
-    content: "/zende-abhijit",
+    content: "/prem-joshi-4aa590276",
     icon: <FaLinkedin height={"50px"} />,
   },
   {
     name: "GitHub",
     href: "https://github.com/07Prem",
-    content: "/naresh-khatri",
+    content: "/07Prem",
     icon: <FaGithub height={"50px"} />,
   },
 ];
